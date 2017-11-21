@@ -10,7 +10,7 @@ Fortunately, the production plant has invested in a new measurement thingamajig 
 
 **Input**
 
-Each line of the input contains either a positive integer dd, indicating that a freshly baked cookie with diameter dd nm has arrived at the holding area, or the symbol ’#’, indicating a request from the packaging unit to send a cookie for packaging. There are at most 600000600000 lines of input, and you may assume that the holding area is empty when the first cookie in the input arrives to the holding area. Furthermore, you have read somewhere that the cookie oven at the plant cannot produce cookies that have a diameter larger than 3030 centimetres (cm) (or 300000000300000000 nm).
+Each line of the input contains either a positive integer dd, indicating that a freshly baked cookie with diameter dd nm has arrived at the holding area, or the symbol ’#’, indicating a request from the packaging unit to send a cookie for packaging. There are at most 600.000 lines of input, and you may assume that the holding area is empty when the first cookie in the input arrives to the holding area. Furthermore, you have read somewhere that the cookie oven at the plant cannot produce cookies that have a diameter larger than 30 centimetres (cm) (or 300.000.000 nm).
 
 **Output**
 
