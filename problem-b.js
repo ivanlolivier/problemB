@@ -1,16 +1,17 @@
-let line;
-const cookies = [];
-let length = 0;
+var line;
+var cookies = [];
+var length = 0;
+var medianIndex = 0;
 
 while (line = readline()) {
   if (line === '#') {
-    let index = (length % 2 === 0)
+    medianIndex = (length % 2 === 0)
         ? length / 2
         : (length + 1) / 2 - 1;
 
-    print(cookies[index]);
+    print(cookies[medianIndex]);
 
-    cookies.splice(index, 1);
+    cookies.splice(medianIndex, 1);
     length--;
   } else {
     binaryInsert(parseInt(line, 10), cookies, 0, length - 1);
@@ -26,7 +27,7 @@ function binaryInsert(value, array, start, end) {
   if (value >= array[end]) return array.splice(end + 1, 0, value);
   if (value <= array[start]) return array.splice(start, 0, value);
 
-  const middleIndex = start + Math.floor((end - start) / 2);
+  var middleIndex = start + Math.floor((end - start) / 2);
 
   if (value === array[middleIndex]) return array.splice(middleIndex, 0, value);
 
