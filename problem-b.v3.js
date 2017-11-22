@@ -49,7 +49,7 @@ function moveLeft() {
   if (height > 1) {
     height--;
   } else {
-    median = prevNumber(cookies, median);
+    median = prevNumber();
     height = 1;
   }
 }
@@ -58,23 +58,27 @@ function moveRight() {
   if (height < cookies[median]) {
     height++;
   } else {
-    median = nextNumber(cookies, median);
+    median = nextNumber();
     height = 1;
   }
 }
 
-function nextNumber(array, from) {
-  for (var i = from + 1; i < array.length; i++) {
-    if (array[i]) {
+function nextNumber() {
+  var i = median + 1;
+  while (true) {
+    if (cookies[i]) {
       return i;
     }
+    i++;
   }
 }
 
-function prevNumber(array, from) {
-  for (var i = from - 1; i >= 0; i--) {
-    if (array[i]) {
+function prevNumber() {
+  var i = median - 1;
+  while (true) {
+    if (cookies[i]) {
       return i;
     }
+    i--;
   }
 }
