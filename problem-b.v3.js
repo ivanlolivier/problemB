@@ -2,7 +2,7 @@ var line;
 
 var cookies = [];
 var qty = 0;
-var median = 0;
+var median = undefined;
 var height = 0;
 var cookie = 0;
 
@@ -13,9 +13,17 @@ while (line = readline()) {
     cookies[median] = cookies[median] - 1;
     qty--;
 
-    (qty % 2 === 0)
-        ? moveRight()
-        : moveLeft();
+    if (qty === 0) {
+      height = 0;
+      median = undefined;
+      continue;
+    }
+
+    if (qty % 2 === 0) {
+      moveRight(true);
+    } else {
+      moveLeft();
+    }
   } else {
     cookie = parseInt(line, 10);
 
@@ -41,10 +49,6 @@ while (line = readline()) {
   }
 }
 
-/*************
- * FUNCTIONS *
- *************/
-
 function moveLeft() {
   if (height > 1) {
     height--;
@@ -54,9 +58,9 @@ function moveLeft() {
   }
 }
 
-function moveRight() {
+function moveRight(noIncHeight) {
   if (height < cookies[median]) {
-    height++;
+    !noIncHeight && height++;
   } else {
     median = nextNumber();
     height = 1;
